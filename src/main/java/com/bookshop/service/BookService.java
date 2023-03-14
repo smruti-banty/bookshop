@@ -1,13 +1,38 @@
 package com.bookshop.service;
 
+import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import com.bookshop.config.DbConfig;
 import com.bookshop.model.Book;
+import com.bookshop.repository.BookRepository;
 
 public class BookService {
+	private final BookRepository bookRepository;
+
+	public BookService() {
+		bookRepository = new BookRepository();
+	}
+
 	public List<Book> getAllBook() {
-		return IntStream.range(1, 11).mapToObj(value -> new Book(value, "book - " + value, "author - " + value,
-				"description - " + value, value * 100, "img - " + value)).toList();
+		return bookRepository.getBooks();
+	}
+
+	public Book getBook(int id) {
+		return bookRepository.getBook(id);
+	}
+
+	public void addOrUpdateBook(Book book) {
+		if (book.id() == 0) {
+			bookRepository.addBook(book);
+		} else {
+			bookRepository.updateBook(book);
+		}
+	}
+	
+	public void deleteBook(int id) {
+		bookRepository.deleteBook(id);
 	}
 }

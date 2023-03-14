@@ -39,4 +39,34 @@
     <servlet-name>GetAllBookController</servlet-name>
     <url-pattern>/GetAllBookController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateBookController</display-name>
+    <servlet-name>UpdateBookController</servlet-name>
+    <servlet-class>com.bookshop.controller.bookcontroller.UpdateBookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateBookController</servlet-name>
+    <url-pattern>/UpdateBookController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubmitController</display-name>
+    <servlet-name>SubmitController</servlet-name>
+    <servlet-class>com.bookshop.controller.bookcontroller.SubmitBookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitController</servlet-name>
+    <url-pattern>/SubmitController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteBookController</display-name>
+    <servlet-name>DeleteBookController</servlet-name>
+    <servlet-class>com.bookshop.controller.bookcontroller.DeleteBookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteBookController</servlet-name>
+    <url-pattern>/DeleteBookController</url-pattern>
+  </servlet-mapping>
 </web-app>

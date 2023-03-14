@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f1f1f1;	
+}
+
+header {
+	background-color: navy;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.book-section {
+	width: 90%;
+	margin: 10px auto;
+}
+a {
+	color: green;
+	text-align: right;
+}
+.book-section .link {
+	text-align: right;
+} 
+
+.book-section .form-container {
+	background: #fff;
+	width: 35%;
+	margin: 10px auto;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.book-section .form-container h2{
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.book-section .form-container form {
+	margin-top: 10px;
+}
+
+.book-section .form-container .form-group {
+	margin-bottom: 5px;
+}
+
+.book-section .form-container .form-control {
+	width: 100%;
+	margin-top: 5px;
+}
+
+.book-section .form-container textarea {
+	resize: none;
+}
+
+.book-section .form-container .button-group {
+	text-align: center;
+}
+
+.book-section .form-container input[type="submit"] {
+	all: unset;
+	background-color: blue;
+	color: #fff;
+	padding: 10px;
+	width: 100px; 
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
