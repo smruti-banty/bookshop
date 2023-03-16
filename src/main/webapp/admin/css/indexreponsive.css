@@ -19,10 +19,14 @@
 		border: 1px solid #ccc;
 		display: flex;
 		flex-direction: column;
+		padding-inline: 0;
 	}
 	table td {
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid #ccc;
 		font-size: .8em;
+	}
+	table tbody td:last-child {
+		border-bottom: none;
 	}
 }
 
