@@ -14,7 +14,7 @@ public class BookRepository {
 	private static final String BOOK_TABLE = "book";
 
 	public BookRepository() {
-		connection = DbConfig.getConnection();
+		connection = new DbConfig().getConnection();
 	}
 
 	public List<Book> getBooks() {

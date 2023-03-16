@@ -6,7 +6,7 @@
 }
 
 body {
-	background-color: #f1f1f1;	
+	background-color: #f1f1f1;
 }
 
 header {
@@ -17,50 +17,90 @@ header {
 }
 
 .side-pop {
-	text-align: right;	
+	position: fixed;
+	top: 5%;
+	text-align: center;
+	padding: 1.5rem 2.5rem;
+	background-color: #fff;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	opacity: 0;
+}
+
+.slide-right-show{
+	animation: slide-right .5s forwards;
+}
+
+.slide-right-hide{
+	animation: slide-right-hide 1s forwards;
 }
 
 .side-pop p {
-	font-size: 1.01rem;
-	font-weight: 600;	
+	font-size: 1.05rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-shadow: 10px 10px 20px rgba(0, 0, 255, 0.5);
+	letter-spacing: .3rem;
+	word-spacing: .3rem;
 }
 
 .book-section {
 	width: 90%;
-	margin: 20px auto;
+	margin: 30px auto;
 }
 
-.book-section > .button {
+.book-section>.button {
 	all: unset;
-	margin-bottom: 10px;	
 	background-color: blue;
 	color: #fff;
-	padding: 10px 20px;
-	border-radius: 10px 20px;
+	padding: 15px 30px;
+	border-radius: 10px;
 	cursor: pointer;
 	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .book-section .container {
 	background-color: #fff;
-	margin-top: 20px;
+	margin-top: 30px;
 	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 	padding: 10px;
 }
 
 .book-section table {
-	width: 100%;	
+	width: 100%;
+	table-layout: fixed; 
+    overflow-wrap: break-word; 
 }
 
-.book-section table, thead, tbody, th, td, tr  {
+
+table, thead, tbody, th, td, tr {
 	border: 1px solid #ccc;
 	padding: 10px;
 	border-collapse: collapse;
 	text-align: center;
 }
 
+table caption {
+  font-size: 1.5em;
+  margin-bottom: .75em;
+}
+
 .book-section table img {
 	width: 100px;
 	height: 100px;
+}
+
+.d-none {
+	display: none;
+}
+
+@keyframes slide-right {
+	from { right: -50rem; opacity: 0;}
+	to { right: 1rem; opacity: 1;}
+}
+
+@keyframes slide-right-hide {
+	from { right: 1rem; opacity: 1;}
+	to { right: -50rem; opacity: 0;}
 }

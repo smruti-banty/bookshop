@@ -74,3 +74,9 @@ a {
 	cursor: pointer;
 	text-transform: uppercase;
 }
+
+@media screen and (max-width: 850px) {
+	.book-section .form-container {
+		width: 100%;
+	}
+}

@@ -2,7 +2,6 @@ package com.bookshop.controller.bookcontroller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,9 +10,6 @@ import java.io.IOException;
 import com.bookshop.model.Book;
 import com.bookshop.service.BookService;
 
-/**
- * Servlet implementation class UpdateBookController
- */
 public class UpdateBookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
