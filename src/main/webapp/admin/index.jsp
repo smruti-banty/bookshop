@@ -10,6 +10,7 @@ final String PATH = request.getContextPath();
 final String ADMIN_PATH = PATH + "/admin";
 final String ADMIN_CSS_PATH = ADMIN_PATH + "/css";
 final String ADMIN_JS_PATH = ADMIN_PATH + "/js";
+final String COMMON_JSP_PATH = "/commonfile";
 
 List<Book> books = (List<Book>) request.getAttribute("allbook");
 String status = (String) request.getAttribute("status");
@@ -21,9 +22,11 @@ String status = (String) request.getAttribute("status");
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Shop</title>
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+<link rel="icon"
+	href="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/index.css">
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/indexreponsive.css">
+<link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/logout.css">
 <script type="text/javascript" src="<%=ADMIN_JS_PATH%>/script.js" defer></script>
 </head>
 <body>
@@ -41,12 +44,12 @@ String status = (String) request.getAttribute("status");
 		<a href="<%=PATH + "/AddBookController"%>" class="button">Add Book</a>
 		<div class="container">
 			<table>
-			<caption>BOOK LISTS</caption>
+				<caption>BOOK LISTS</caption>
 				<thead>
 					<tr>
+						<th scope="col">Image</th>
 						<th scope="col">Name</th>
 						<th scope="col">Author</th>
-						<th scope="col">Image</th>
 						<th scope="col">Price</th>
 						<th scope="col">Description</th>
 						<th scope="col">Action</th>
@@ -57,9 +60,9 @@ String status = (String) request.getAttribute("status");
 					for (Book book : books) {
 					%>
 					<tr>
+						<td><img src="<%=book.imgUrl()%>" alt="book"></td>
 						<td><%=book.name()%></td>
 						<td><%=book.author()%></td>
-						<td><img src="<%=book.imgUrl()%>" alt="book" loading="lazy"></td>
 						<td>&#8377; <%=book.price()%></td>
 						<td title="<%=book.descrption()%>"><p class="description"><%=book.descrption()%></p></td>
 						<td><a
@@ -73,5 +76,10 @@ String status = (String) request.getAttribute("status");
 			</table>
 		</div>
 	</section>
+
+	<!-- Logout -->
+	
+	<% pageContext.include(COMMON_JSP_PATH + "/logout.html"); %>
+	
 </body>
 </html>
