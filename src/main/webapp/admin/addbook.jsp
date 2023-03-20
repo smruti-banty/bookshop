@@ -5,16 +5,13 @@
 final String PATH = request.getContextPath();
 final String ADMIN_PATH = PATH + "/admin";
 final String ADMIN_CSS_PATH = ADMIN_PATH + "/css";
+final String COMMON_JSP_PATH = "/commonfile";
+final String COMMON_CSS_PATH = PATH + COMMON_JSP_PATH + "/css";
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Book Shop</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+<% pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp"); %>
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/addbook.css">
+<link rel="stylesheet" href="<%=COMMON_CSS_PATH%>/formstyling.css">
+<link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/logout.css">
 </head>
 <body>
 	<%
@@ -55,7 +52,8 @@ final String ADMIN_CSS_PATH = ADMIN_PATH + "/css";
 
 					<div class="form-group">
 						<label>Description</label>
-						<textarea rows="4" name="description" class="form-control" required><%=book.descrption()%></textarea>
+						<textarea rows="4" name="description" class="form-control"
+							required><%=book.descrption()%></textarea>
 					</div>
 
 					<input type="hidden" name="id" value="<%=book.id()%>">
@@ -67,5 +65,11 @@ final String ADMIN_CSS_PATH = ADMIN_PATH + "/css";
 			</div>
 		</div>
 	</section>
+
+	<!-- Logout -->
+
+	<%
+	pageContext.include(COMMON_JSP_PATH + "/logout.html");
+	%>
 </body>
 </html>

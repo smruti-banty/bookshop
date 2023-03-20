@@ -21,7 +21,7 @@ public class DeleteBookController extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		bookService.deleteBook(id);
 		
-		response.sendRedirect("GetAllBookController?deleted");
+		response.sendRedirect("GetAllBookController?page=admin&deleted");
 	}
 
 }

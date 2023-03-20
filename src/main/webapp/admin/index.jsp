@@ -9,36 +9,29 @@
 final String PATH = request.getContextPath();
 final String ADMIN_PATH = PATH + "/admin";
 final String ADMIN_CSS_PATH = ADMIN_PATH + "/css";
-final String ADMIN_JS_PATH = ADMIN_PATH + "/js";
 final String COMMON_JSP_PATH = "/commonfile";
+final String COMMON_CSS_PATH = PATH + COMMON_JSP_PATH + "/css";
+final String COMMON_JS_PATH = PATH + COMMON_JSP_PATH + "/js";
 
 List<Book> books = (List<Book>) request.getAttribute("allbook");
 String status = (String) request.getAttribute("status");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Shop</title>
-<link rel="icon"
-	href="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+<%
+pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
+%>
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/index.css">
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/indexreponsive.css">
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/logout.css">
-<script type="text/javascript" src="<%=ADMIN_JS_PATH%>/script.js" defer></script>
+<script type="text/javascript" src="<%=COMMON_JS_PATH%>/script.js" defer></script>
 </head>
 <body>
 	<header>
 		<h2>Admin Page</h2>
 	</header>
 
-	<div class='side-pop <%=status.isEmpty() ? "d-none" : ""%>'>
-		<p>
-			Book
-			<%=status%></p>
-	</div>
+	<%
+	pageContext.include(COMMON_JSP_PATH + "/popup.jsp");
+	%>
 
 	<section class="book-section">
 		<a href="<%=PATH + "/AddBookController"%>" class="button">Add Book</a>
@@ -56,6 +49,16 @@ String status = (String) request.getAttribute("status");
 					</tr>
 				</thead>
 				<tbody>
+					<%
+					if (books.size() == 0) {
+					%>
+					<tr>
+						<td colspan="6">No Book Found</td>
+					</tr>
+					<%
+					}
+					%>
+
 					<%
 					for (Book book : books) {
 					%>
@@ -78,8 +81,10 @@ String status = (String) request.getAttribute("status");
 	</section>
 
 	<!-- Logout -->
-	
-	<% pageContext.include(COMMON_JSP_PATH + "/logout.html"); %>
-	
+
+	<%
+	pageContext.include(COMMON_JSP_PATH + "/logout.html");
+	%>
+
 </body>
 </html>

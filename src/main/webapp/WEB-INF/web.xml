@@ -12,12 +12,7 @@
   </servlet-mapping>
   <display-name>bookshop</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>loginsignup/login.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -68,5 +63,25 @@
   <servlet-mapping>
     <servlet-name>DeleteBookController</servlet-name>
     <url-pattern>/DeleteBookController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.bookshop.controller.usercontroller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignupController</display-name>
+    <servlet-name>SignupController</servlet-name>
+    <servlet-class>com.bookshop.controller.usercontroller.SignupController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupController</servlet-name>
+    <url-pattern>/SignupController</url-pattern>
   </servlet-mapping>
 </web-app>

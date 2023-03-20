@@ -1,11 +1,7 @@
 package com.bookshop.service;
 
-import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
-import com.bookshop.config.DbConfig;
 import com.bookshop.model.Book;
 import com.bookshop.repository.BookRepository;
 

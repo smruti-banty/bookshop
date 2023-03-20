@@ -21,18 +21,19 @@ public class GetAllBookController extends HttpServlet {
 
 		request.setAttribute("allbook", bookService.getAllBook());
 		request.setAttribute("status", queryStatus(request));
-
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/index.jsp");
+		
+		final String PAGE = request.getParameter("page"); 
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(PAGE + "/index.jsp");
 		requestDispatcher.forward(request, response);
 	}
 
 	private String queryStatus(HttpServletRequest request) {
 		String queryStatus = "";
-		if (request.getParameter("added") != null) {
+		if (request.getParameter("Book added") != null) {
 			queryStatus = "added";
-		} else if (request.getParameter("updated") != null) {
+		} else if (request.getParameter("Book updated") != null) {
 			queryStatus = "updated";
-		} else if (request.getParameter("deleted") != null) {
+		} else if (request.getParameter("Book deleted") != null) {
 			queryStatus = "deleted";
 		}
 
