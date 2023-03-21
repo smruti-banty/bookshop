@@ -1,5 +1,7 @@
 package com.bookshop.controller.bookcontroller;
 
+import static com.bookshop.utility.Helper.*;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -33,16 +35,4 @@ public class GetAllBookController extends HttpServlet {
 		}
 	}
 
-	private String queryStatus(HttpServletRequest request) {
-		String queryStatus = "";
-		if (request.getParameter("added") != null) {
-			queryStatus = "Book added";
-		} else if (request.getParameter("updated") != null) {
-			queryStatus = "Book updated";
-		} else if (request.getParameter("deleted") != null) {
-			queryStatus = "Book deleted";
-		}
-
-		return queryStatus;
-	}
 }

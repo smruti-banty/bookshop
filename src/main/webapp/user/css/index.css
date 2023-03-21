@@ -3,55 +3,60 @@
 	width: 90%;
 	margin: 20px auto;
 }
-.book-section .card-container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+.book-section .container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: 2rem;
 }
 
-.card-container .card {
-	background-color: #f1f1f1;
-	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);	
-	border-radius: 20px;
-	position: relative;
+.container {
+    width: 40%;
 }
 
-.card-container .card-header {
-	border-bottom: 1px solid #ccc;
+.container .card {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.3);
 }
 
-.card-container .card-header h2 {
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	padding: 10px 0;
-	text-align: center;
+
+.container .card .img-box {
+    background-color: #fff;
+    box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-30%);   
 }
-.card-container .card img{
-	width: 100%;
-	height: 400px;
+.container .card .img-box img {
+    height: 320px;
+}
+.card .card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-right .card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card-right .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card-container .card-body {
-	padding: 10px;
-	display: flex;
-	flex-direction: column;
-	gap: .5rem;
-}
-.card-container .card-body > * {
-	text-align: center;
-	border-bottom: 1px solid #ccc;
-}
-.card-container .card-body > p {
-	text-align: center;
-}
-
-.card-container .card-footer {
-	position: absolute;
-	width: 100%;
-	bottom:0;
-	margin: 20px 0;
-	display: flex;
-	justify-content: space-between;
-	background: red;
-	
+.card-right .card-footer .button {
+    all: unset;
+    background-color: blue;
+    padding: 8px 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
 }
