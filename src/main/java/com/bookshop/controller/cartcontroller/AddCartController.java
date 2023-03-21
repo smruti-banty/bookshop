@@ -27,11 +27,12 @@ public class AddCartController extends HttpServlet {
 		if (session != null) {
 			int userId = (int) session.getAttribute("id");
 			int bookId = Integer.parseInt(request.getParameter("bookid"));
-			
+
 			var bookUser = new BookUser(0, userId, bookId);
-			cartService.addCart(bookUser);
-			
-			response.sendRedirect("GetAllBookController?added");
+			boolean addCart = cartService.addCart(bookUser);
+
+			String status = addCart ? "added" : "exists";
+			response.sendRedirect("GetAllBookController?" + status);
 		} else {
 			response.sendError(404);
 		}

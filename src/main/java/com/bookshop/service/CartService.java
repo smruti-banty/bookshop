@@ -13,8 +13,15 @@ public class CartService {
 		cartRepository = new CartRepository();
 	}
 
-	public void addCart(BookUser bookUser) {
-		cartRepository.addCart(bookUser);
+	public boolean addCart(BookUser bookUser) {
+		boolean isExist = cartRepository.cartExists(bookUser.userId(), bookUser.bookId());
+
+		if (!isExist) {
+			cartRepository.addCart(bookUser);
+			return true;
+		}
+
+		return false;
 	}
 
 	public List<Book> getCart(int userId) {
