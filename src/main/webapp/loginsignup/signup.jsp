@@ -44,7 +44,7 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 
 				<div class="form-group">
 					<label>Address</label>
-					<textarea rows="4" class="form-control" required></textarea>
+					<textarea rows="4" class="form-control" name="address" required></textarea>
 				</div>
 
 				<div class="button-group">

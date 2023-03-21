@@ -13,6 +13,9 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 %>
 <link rel="stylesheet" href="<%=COMMON_CSS_PATH%>/formstyling.css">
 <script type="text/javascript" src="<%=COMMON_JS_PATH%>/script.js" defer></script>
+<script>
+window.history.forward(1)
+</script>
 </head>
 <body>
 	<%
@@ -21,7 +24,7 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 	<div class="container-center">
 		<div class="form-container">
 			<h2>Login</h2>
-			<form method="post" action="LoginController">
+			<form method="post" action="<%= PATH %>/LoginController">
 				<div class="form-group">
 					<label>Enter Email</label> <input type="text" name="email"
 						class="form-control" required>

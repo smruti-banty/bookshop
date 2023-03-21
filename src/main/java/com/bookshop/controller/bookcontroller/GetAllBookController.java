@@ -18,23 +18,29 @@ public class GetAllBookController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		var session = request.getSession(false);
+		if (session != null) {
+			int role = (int) session.getAttribute("role");
 
-		request.setAttribute("allbook", bookService.getAllBook());
-		request.setAttribute("status", queryStatus(request));
-		
-		final String PAGE = request.getParameter("page"); 
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher(PAGE + "/index.jsp");
-		requestDispatcher.forward(request, response);
+			request.setAttribute("allbook", bookService.getAllBook());
+			request.setAttribute("status", queryStatus(request));
+
+			final String PAGE = role == 1 ? "admin" : "user";
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(PAGE + "/index.jsp");
+			requestDispatcher.forward(request, response);
+		} else {
+			response.sendError(404);
+		}
 	}
 
 	private String queryStatus(HttpServletRequest request) {
 		String queryStatus = "";
-		if (request.getParameter("Book added") != null) {
-			queryStatus = "added";
-		} else if (request.getParameter("Book updated") != null) {
-			queryStatus = "updated";
-		} else if (request.getParameter("Book deleted") != null) {
-			queryStatus = "deleted";
+		if (request.getParameter("added") != null) {
+			queryStatus = "Book added";
+		} else if (request.getParameter("updated") != null) {
+			queryStatus = "Book updated";
+		} else if (request.getParameter("deleted") != null) {
+			queryStatus = "Book deleted";
 		}
 
 		return queryStatus;

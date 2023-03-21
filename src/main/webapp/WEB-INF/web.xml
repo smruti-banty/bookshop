@@ -14,6 +14,9 @@
   <welcome-file-list>
     <welcome-file>loginsignup/login.jsp</welcome-file>
   </welcome-file-list>
+  <error-page>
+    <location>/general-error.html</location>
+  </error-page>
   <servlet>
     <description></description>
     <display-name>AddBookController</display-name>
@@ -83,5 +86,55 @@
   <servlet-mapping>
     <servlet-name>SignupController</servlet-name>
     <url-pattern>/SignupController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutController</display-name>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>com.bookshop.controller.usercontroller.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCart</display-name>
+    <servlet-name>AddCart</servlet-name>
+    <servlet-class>com.bookshop.controller.cartcontroller.AddCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCart</servlet-name>
+    <url-pattern>/AddCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetCart</display-name>
+    <servlet-name>GetCart</servlet-name>
+    <servlet-class>com.bookshop.controller.cartcontroller.GetCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetCart</servlet-name>
+    <url-pattern>/GetCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddOrder</display-name>
+    <servlet-name>AddOrder</servlet-name>
+    <servlet-class>com.bookshop.controller.ordercontroller.AddOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddOrder</servlet-name>
+    <url-pattern>/AddOrder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetOrder</display-name>
+    <servlet-name>GetOrder</servlet-name>
+    <servlet-class>com.bookshop.controller.ordercontroller.GetOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetOrder</servlet-name>
+    <url-pattern>/GetOrder</url-pattern>
   </servlet-mapping>
 </web-app>

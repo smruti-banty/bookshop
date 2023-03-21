@@ -21,7 +21,7 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 %>
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/index.css">
 <link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/indexreponsive.css">
-<link rel="stylesheet" href="<%=ADMIN_CSS_PATH%>/logout.css">
+<link rel="stylesheet" href="<%=COMMON_CSS_PATH%>/logout.css">
 <script type="text/javascript" src="<%=COMMON_JS_PATH%>/script.js" defer></script>
 </head>
 <body>

@@ -5,11 +5,11 @@ import java.sql.Connection;
 import com.bookshop.config.DbConfig;
 import com.bookshop.model.User;
 
-public class LoginSignupRepository {
+public class UserRepository {
 	private final Connection connection;
 	private static final String USER_TABLE = "user";
 
-	public LoginSignupRepository() {
+	public UserRepository() {
 		connection = new DbConfig().getConnection();
 	}
 
