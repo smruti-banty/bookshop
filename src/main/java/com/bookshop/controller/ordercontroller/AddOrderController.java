@@ -13,7 +13,6 @@ import com.bookshop.service.OrderService;
  */
 public class AddOrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String USER_PAGE = "user";
 	private final OrderService orderService;
 
 	public AddOrderController() {
@@ -28,11 +27,8 @@ public class AddOrderController extends HttpServlet {
 			int userId = (int) session.getAttribute("id");
 			orderService.order(userId);
 			
-			request.setAttribute("status", "Ordere placed");
+			response.sendRedirect("GetOrderController?placed");
 			
-			var requestDispatcher = request.getRequestDispatcher(USER_PAGE + "/index.jsp");
-			requestDispatcher.forward(request, response);
-
 		} else {
 			response.sendError(404);
 		}

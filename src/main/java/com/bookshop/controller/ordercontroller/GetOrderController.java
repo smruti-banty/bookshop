@@ -30,7 +30,7 @@ public class GetOrderController extends HttpServlet {
 			int userId = (int) session.getAttribute("id");
 			var books = orderService.getOrders(userId);
 
-			request.setAttribute("books", books);
+			request.setAttribute("allbook", books);
 			request.setAttribute("totalcost", totalCost(books));
 			
 			var requestDispatcher = request.getRequestDispatcher(USER_PAGE + "/order.jsp");

@@ -39,8 +39,8 @@ public class CartRepository {
 				SELECT b.id, b.book_name,
 					b.author_name, b.image_url,
 					b.description, b.price
-				FROM %s b
-				INNER JOIN %s c
+				FROM `%s` b
+				INNER JOIN `%s` c
 				ON b.id = c.book_id
 				WHERE c.user_id = ?;
 				""".formatted(BOOK_TABLE, CART_TABLE);

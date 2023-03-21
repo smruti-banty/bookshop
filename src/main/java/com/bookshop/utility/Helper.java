@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class Helper {
 	private Helper() {
 	}
-	
+
 	public static String queryStatus(HttpServletRequest request) {
 		String queryStatus = "";
 		if (request.getParameter("added") != null) {
@@ -18,11 +18,13 @@ public class Helper {
 			queryStatus = "Book updated";
 		} else if (request.getParameter("deleted") != null) {
 			queryStatus = "Book deleted";
+		} else if (request.getParameter("placed") != null) {
+			queryStatus = "Order Placed ";
 		}
 
 		return queryStatus;
 	}
-	
+
 	public static String queryStatus(HttpServletRequest request, String suffix) {
 		String queryStatus = "";
 		if (request.getParameter("added") != null) {
@@ -31,14 +33,14 @@ public class Helper {
 			queryStatus = "Updated to " + suffix;
 		} else if (request.getParameter("deleted") != null) {
 			queryStatus = "Removed from " + suffix;
+		} else if (request.getParameter("placed") != null) {
+			queryStatus = "Order Placed ";
 		}
 
 		return queryStatus;
 	}
-	
+
 	public static double totalCost(List<Book> books) {
-		return books.stream() 
-					.mapToDouble(book -> book.price())
-					.reduce(0.0, Double::sum);
+		return books.stream().mapToDouble(book -> book.price()).reduce(0.0, Double::sum);
 	}
 }

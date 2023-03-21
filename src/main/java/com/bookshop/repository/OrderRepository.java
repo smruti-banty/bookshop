@@ -20,7 +20,7 @@ public class OrderRepository {
 
 	public void order(List<BookUser> bookUsers) {
 		final String QUERY = """
-				INSERT INTO %s (user_id, book_id) values (%d, %d)
+				INSERT INTO `%s` (user_id, book_id) values (%d, %d)
 				""";
 
 		try {
@@ -44,8 +44,8 @@ public class OrderRepository {
 				SELECT b.id, b.book_name,
 					b.author_name, b.image_url,
 					b.description, b.price
-				FROM %s b
-				INNER JOIN %s o
+				FROM `%s` b
+				INNER JOIN `%s` o
 				ON b.id = o.book_id
 				WHERE o.user_id = ?;
 				""".formatted(BOOK_TABLE, ORDER_TABLE);

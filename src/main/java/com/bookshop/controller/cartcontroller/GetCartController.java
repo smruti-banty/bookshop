@@ -30,7 +30,7 @@ public class GetCartController extends HttpServlet {
 			int userId = (int) session.getAttribute("id");
 			var books = cartService.getCart(userId);
 			
-			request.setAttribute("books", books);
+			request.setAttribute("allbook", books);
 			request.setAttribute("status", queryStatus(request, "cart"));
 			request.setAttribute("totalcost", totalCost(books));
 			

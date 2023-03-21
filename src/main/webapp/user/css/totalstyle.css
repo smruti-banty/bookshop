@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.total-container {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    bottom: 0;
+}
+
+.total-container .total-div {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.total-div .button {
+    all: unset;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+}

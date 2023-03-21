@@ -14,7 +14,6 @@ import com.bookshop.service.CartService;
  */
 public class AddCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String USER_PAGE = "user";
 	private final CartService cartService;
 
 	public AddCartController() {
@@ -31,10 +30,8 @@ public class AddCartController extends HttpServlet {
 			
 			var bookUser = new BookUser(0, userId, bookId);
 			cartService.addCart(bookUser);
-			request.setAttribute("status", "Book added to cart");
 			
-			var requestDispatcher = request.getRequestDispatcher(USER_PAGE + "/index.jsp");
-			requestDispatcher.forward(request, response);
+			response.sendRedirect("GetAllBookController?added");
 		} else {
 			response.sendError(404);
 		}
