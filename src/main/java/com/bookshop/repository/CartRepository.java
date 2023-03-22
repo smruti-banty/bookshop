@@ -124,4 +124,22 @@ public class CartRepository {
 		}
 	}
 
+	public boolean cartExists(int userId, int bookId) {
+		boolean isExists = false;
+		final String QUERY = """
+				SELECT id FROM `%s` WHERE user_id = ? AND book_id = ?
+				""".formatted(CART_TABLE);
+		try {
+			var prepareStatement = connection.prepareStatement(QUERY);
+			prepareStatement.setInt(1, userId);
+			prepareStatement.setInt(2, bookId);
+
+			var resultSet = prepareStatement.executeQuery();
+			isExists = resultSet.next();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isExists;
+	}
+
 }

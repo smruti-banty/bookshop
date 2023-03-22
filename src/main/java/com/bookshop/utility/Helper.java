@@ -20,6 +20,8 @@ public class Helper {
 			queryStatus = "Book deleted";
 		} else if (request.getParameter("placed") != null) {
 			queryStatus = "Order Placed ";
+		} else if (request.getParameter("exists") != null) {
+			queryStatus = "Cart exists";
 		}
 
 		return queryStatus;
@@ -35,6 +37,8 @@ public class Helper {
 			queryStatus = "Removed from " + suffix;
 		} else if (request.getParameter("placed") != null) {
 			queryStatus = "Order Placed ";
+		} else if (request.getParameter("exists") != null) {
+			queryStatus = "Cart exists";
 		}
 
 		return queryStatus;
