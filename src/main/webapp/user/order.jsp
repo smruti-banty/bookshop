@@ -35,8 +35,15 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 			href="<%=PATH%>/GetOrderController" class="link-active">Order</a>
 	</nav>
 	<main>
-		<section class="image-section"></section>
+		<!-- <section class="image-section"></section> -->
 		<section class="book-section">
+		<%
+			if (books.size() == 0) {
+			%>
+			<h2>Your haven't order anything</h2>
+			<%
+			}
+			%>
 			<div class="container">
 				<%
 				for (Book book : books) {

@@ -32,13 +32,14 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 	</header>
 	<nav>
 		<a href="<%=PATH%>/GetAllBookController" class="link-active">Home</a>
-		<a href="<%=PATH%>/GetCartController">Cart</a>
-		<a href="<%=PATH%>/GetOrderController">Order</a>
+		<a href="<%=PATH%>/GetCartController">Cart</a> <a
+			href="<%=PATH%>/GetOrderController">Order</a>
 	</nav>
-	
+
 	<main>
 		<section class="image-section"></section>
 		<section class="book-section">
+			<h2>Recommended Books</h2>
 			<div class="container">
 				<%
 				for (Book book : books) {
@@ -65,7 +66,8 @@ pageContext.include(COMMON_JSP_PATH + "/basichtml.jsp");
 									&#8377;
 									<%=book.price()%></h3>
 							</div>
-							<a href="<%=PATH%>/AddCartController?bookid=<%=book.id()%>" class="button">Add Cart</a>
+							<a href="<%=PATH%>/AddCartController?bookid=<%=book.id()%>"
+								class="button">Add Cart</a>
 						</div>
 					</div>
 				</div>

@@ -33,12 +33,23 @@ nav a {
 nav a:hover, .link-active {
 	color: gold;	
 }
+.image-section {
+	background-image: url('https://static.wixstatic.com/media/e1cfe3_af788bdec88c49189ba3af2f8ebc4d75~mv2.jpeg/v1/fit/w_2500,h_1330,al_c/e1cfe3_af788bdec88c49189ba3af2f8ebc4d75~mv2.jpeg');
+	background-position: center;
+	height: 80vh;	
+	overflow: hidden;
+}
 
 .book-section {
 	margin-top: 20px;
 	width: 60%;
 	margin: 20px auto;
 	min-height: 100vh;
+}
+
+.book-section h2 {
+	text-align: center;
+	margin: 20px 0;	
 }
 
 .container {
